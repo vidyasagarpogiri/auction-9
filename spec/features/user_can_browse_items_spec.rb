@@ -2,14 +2,28 @@ require 'rails_helper'
 
 RSpec.describe "Unauthenticated User", :feature do
   it "can browse auction items on home page" do
+    create_items
+
     visit '/'
 
     click_on "Browse Auction Items"
 
+    expect(page).to have_content(Item.first.name)
+    expect(page).to have_content(Item.last.name)
+  end
+
+  def create_items
+    user = User.create first_name: "sally",
+                       last_name: "awesome",
+                       password: "password",
+                       password_confirmation: "password"
+
     10.times do
-      count = 1
-      expect(page).to have_content(Item.find(count).name)
-      count += 1
+      Item.create name: Faker::Hipster.sentence(2),
+                  description: Faker::Hipster.paragraph(2),
+                  favorites: 5,
+                  upvotes: 10,
+                  user_id: user.id
     end
   end
 end
