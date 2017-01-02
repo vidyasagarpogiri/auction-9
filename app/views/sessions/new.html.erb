@@ -1,10 +1,16 @@
-<h2>Login</h2>
-<%= form_tag login_path, method: :post do %>
-  <%= label_tag :email_address %>
-  <%= text_field_tag :email_address %>
-  <%= label_tag :password %>
-  <%= text_field_tag :password %>
-  <%= submit_tag "Login" %>
-<% end %>
+<div class="container">
+  <h1 class="center">Login</h2>
+  <div class="row small col s4 m4">
+    <%= form_tag login_path, method: :post, id: "login-form" do %>
+      <%= label_tag :email_address %>
+      <%= text_field_tag :email_address %>
+      <%= label_tag :password %>
+      <%= text_field_tag :password %>
+      <%= submit_tag "Login", class: "yellow darken-2 btn-large" %>
+    <% end %>
+  </div>
 
-Don't have an account? <%= link_to "Sign up here", new_user_path %>
+<div class="center">
+  Don't have an account? <%= link_to "Sign up here", new_user_path %>
+</div>
+</div>
