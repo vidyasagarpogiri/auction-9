@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'selenium-webdriver'
 
 
 group :development, :test do

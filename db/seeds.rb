@@ -16,24 +16,18 @@ class Seed
     10.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
-                  favorites: 0,
-                  upvotes: 0,
                   user_id: user.id
     end
 
     10.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
-                  favorites: 5,
-                  upvotes: 10,
                   user_id: user.id
     end
 
     10.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
-                  favorites: 0,
-                  upvotes: 4,
                   user_id: user.id
     end
   end

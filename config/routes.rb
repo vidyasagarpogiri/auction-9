@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :upvotes
   get '/login', to: 'sessions#new', as: :signup
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'

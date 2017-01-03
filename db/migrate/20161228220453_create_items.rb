@@ -4,8 +4,6 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :description
       t.references :user, foreign_key: true
-      t.integer :favorites
-      t.integer :upvotes
 
       t.timestamps
     end
