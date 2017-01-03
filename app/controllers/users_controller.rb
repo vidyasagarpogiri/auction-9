@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
       flash[:success] = "Logged in as #{@user.first_name} #{@user.last_name}"
     else
-      flash.now[:error] = "Please try again."
+      flash[:notice] = @user.errors.full_messages.join(", ")
       render :new
     end
   end
