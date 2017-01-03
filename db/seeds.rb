@@ -14,7 +14,7 @@ class Seed
                        password: "password",
                        password_confirmation: "password"
     10.times do
-      Item.create name: Faker::Hipster.sentence(2),
+      Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
                   favorites: 0,
                   upvotes: 0,
@@ -22,7 +22,7 @@ class Seed
     end
 
     10.times do
-      Item.create name: Faker::Hipster.sentence(2),
+      Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
                   favorites: 5,
                   upvotes: 10,
@@ -30,7 +30,7 @@ class Seed
     end
 
     10.times do
-      Item.create name: Faker::Hipster.sentence(2),
+      Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
                   favorites: 0,
                   upvotes: 4,
