@@ -20,3 +20,13 @@ a {
 .card .card-title {
   font-size: 18px;
 }
+
+.form-error {
+  background: #e53935;
+  color: white;
+}
+
+.success {
+  background: #66bb6a;
+  color: white;
+}

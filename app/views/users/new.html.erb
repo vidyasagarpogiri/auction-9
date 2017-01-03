@@ -3,7 +3,7 @@
   <div class="row small col s4 m4">
     <%= form_for @user do |f| %>
       <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%= f.text_field :first_name, class: "validate"%>
       <%= f.label :last_name %>
       <%= f.text_field :last_name %>
       <%= f.label :email_address %>
