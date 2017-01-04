@@ -1,3 +1,16 @@
 <h1>
   Welcome, <%= current_user.first_name %>
 </h1>
+
+<%= link_to "Add an Auction Item", new_item_path %>
+
+<div class="container">
+<div class="row">
+  <ul class="collection">
+    <% current_user.items.each do |item| %>
+      <li class="collection-item"><%= item.name %> | <%= item.description %></span></li>
+    <% end %>
+  </div>
+</div>
+</div>
+

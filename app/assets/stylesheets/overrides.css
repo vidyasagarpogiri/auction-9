@@ -3,15 +3,30 @@
  *= require_self
  */
 
-nav .nav-wrapper {
-	margin-left: 20px;
-	margin-right: 20px;
+html {
+  background: #fafafa;
 }
 
-h1 {
-	text-align: center;
-	color: #0277bd;
+nav {
+  background: white;
 }
+
+nav .nav-wrapper {
+  background: white;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #616161;
+}
+
+nav .brand-logo {
+  color: #616161;
+}
+
+nav ul a {
+  color: #616161;
+
+}
+
 
 a {
   color: #f50057;
@@ -30,3 +45,27 @@ a {
   background: #66bb6a;
   color: white;
 }
+
+.row .col.s3 {
+  width: 33%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+.card.medium {
+  height: 400px;
+  padding: 0; margin-right: 2px;
+}
+
+
+.banner {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  color: #0277bd;
+}
+

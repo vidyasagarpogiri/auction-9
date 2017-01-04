@@ -11,11 +11,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <body>
   <% unless params[:controller] == "home" && params[:action] == "show" %>
     <%= render partial: "layouts/navbar" %>
   <% end %>
-
-  <body>
     <% if flash[:notice] %>
       <div class="container">
         <div class="card-panel z-depth-1 success"><%= flash[:notice] %></div>

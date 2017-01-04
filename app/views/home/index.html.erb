@@ -1,15 +1,17 @@
-<h1 class="center">Auction Items</h1>
+<div class="banner">
+    <p><%= image_tag("auction.png") %></p>
+</div>
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
-      <div class="card medium col m4">
+      <div class="card medium col s3 m3 l3">
         <div class="card-image waves-effect waves-block waves-light">
-          <%= image_tag("sample.jpg", class:"activator") %>
+          <%= image_tag("sprout2.jpg", class:"activator") %>
         </div>
         <div class="card-content">
-          <i class="material-icons activator right">more_vert</i>
+          <i class="tiny material-icons activator right">description</i>
           <span class="card-title grey-text text-darken-4"><%= item.name %></span>
-          <p><a href="#">More details</a></p>
+          <p><a href="#">View Item</a></p>
         </div>
         <div class="card-action upvote-number">
           <span>  <%= link_to edit_upvote_path(item), id:"upvote" do %>
