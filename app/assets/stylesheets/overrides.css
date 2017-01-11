@@ -87,7 +87,6 @@ h1 {
 }
 
 a.btn.home {
-  width: 300px;
   margin-bottom: 30px;
 }
 .btn:hover {
@@ -110,5 +109,5 @@ h4 {
 }
 
 .container {
-  width: 50%;
+  width: 60%;
 }

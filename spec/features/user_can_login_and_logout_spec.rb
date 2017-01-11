@@ -11,7 +11,7 @@ RSpec.describe "Authenticated User", :feature do
 
   it "can login" do
     visit "/"
-    click_on "Sign up or Login"
+    click_on "Donate items to the auction"
     fill_in "Email address", with: "sally@sally.com"
     fill_in "Password", with: "password"
     within "#login-form" do

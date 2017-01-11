@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Unauthenticated User", :feature do
   it "can sign up and create an account" do
     visit "/"
-    click_on "Sign up or Login"
+    click_on "Donate items to the auction"
     click_on "Sign up here"
     fill_in "First name", with: "Sally"
     fill_in "Last name", with: "Mac"
