@@ -4,7 +4,7 @@
  */
 
 #home-welcome {
-  background: url("collage.jpg");
+  background-image: url("collage.jpg");
   background-size: 100%;
 }
 
@@ -106,6 +106,7 @@ h4 {
   background-color: white;
   opacity: .9;
   border-radius: 20px;
+  margin-top: 200px;
 }
 
 .container {
