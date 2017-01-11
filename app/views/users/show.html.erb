@@ -1,16 +1,38 @@
-<h1>
-  Welcome, <%= current_user.first_name %>
-</h1>
-
-<%= link_to "Add an Auction Item", new_item_path %>
-
 <div class="container">
-<div class="row">
-  <ul class="collection">
-    <% current_user.items.each do |item| %>
-      <li class="collection-item"><%= item.name %> | <%= item.description %></span></li>
-    <% end %>
+  <div class="row">
+  </div>
+  <div class="row center">
+    <%= link_to "Add an Auction Item", new_item_path, class:"btn" %>
   </div>
 </div>
-</div>
 
+
+<div class="container center">
+  <div class="row center">
+    <%= image_tag("donations.png") %>
+  </div>
+  <% if current_user.items.any? %>
+    <div class="collection">
+      <% current_user.items.each do |item| %>
+        <%= link_to "#{item.name}", item_path(item.id), class:'collection-item
+          center' %>
+      <% end %>
+    </div>
+  <% else %>
+    <p>You haven't added any donations yet</p>
+  <% end %>
+
+  <div class="row center">
+    <%= image_tag("upvotes.png") %>
+  </div>
+  <% if current_user.items.any? %>
+    <div class="collection">
+      <% @upvoted.each do |item| %>
+        <%= link_to "#{item.name}", item_path(item.id), class:'collection-item
+            center' %>
+        <% end %>
+    </div>
+  <% else %>
+    <p>You haven't upvoted any items yet</p>
+  <% end %>
+</div>

@@ -15,7 +15,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'selenium-webdriver'
-
+gem 'paperclip', "~> 5.0.0"
+gem 'slim-rails'
 
 group :development, :test do
   gem 'pry'

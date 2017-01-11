@@ -3,8 +3,9 @@
  *= require_self
  */
 
-html {
-  background: #fafafa;
+#home-welcome {
+  background:url('/assets/collage.jpg');
+  background-size: 100%;
 }
 
 nav {
@@ -20,17 +21,17 @@ nav .nav-wrapper {
 
 nav .brand-logo {
   color: #616161;
-}
-
+} 
 nav ul a {
   color: #616161;
 
 }
 
 
-a {
-  color: #f50057;
+.collection a.collection-item {
+  color: #66bb6a;
 }
+
 
 .card .card-title {
   font-size: 18px;
@@ -62,10 +63,52 @@ a {
   font-size: 30px;
   text-align: center;
   color: white;
+  margin-top: 200px;
 }
 
 h1 {
   text-align: center;
-  color: #0277bd;
+  color: #1b5e20;
+}
+.card .card-content .card-title {
+  line-height: 0px
 }
 
+.activator {
+  cursor: pointer;
+}
+
+.card.small .card-image, .card.medium .card-image, .card.large .card-image {
+  height: 200px;
+}
+
+.btn {
+  background-color: #66bb6a;
+}
+
+a.btn.home {
+  width: 300px;
+  margin-bottom: 30px;
+}
+.btn:hover {
+  background-color: #f4511e;
+}
+
+h4 {
+  color: #424242;
+}
+
+.nav-italic {
+  font-style: italic;
+  color: #ffab40;
+}
+
+.container.center.home {
+  background-color: white;
+  opacity: .9;
+  border-radius: 20px;
+}
+
+.container {
+  width: 50%;
+}

@@ -4,25 +4,31 @@
 <div class="container">
   <div class="row">
     <% @items.each do |item| %>
-      <div class="card medium col s3 m3 l3">
-        <div class="card-image waves-effect waves-block waves-light">
-          <%= image_tag("sprout2.jpg", class:"activator") %>
-        </div>
-        <div class="card-content">
-          <i class="tiny material-icons activator right">description</i>
-          <span class="card-title grey-text text-darken-4"><%= item.name %></span>
-          <p><a href="#">View Item</a></p>
-        </div>
-        <div class="card-action upvote-number">
-          <span>  <%= link_to edit_upvote_path(item), id:"upvote" do %>
-            <i class="material-icons left">thumb_up</i>
-          <% end %><%= item.votes_for.size %></span>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"><%= item.name %><i class="material-icons right">close</i></span>
-          <p><%= item.description %></p>
+      <div class="col m4">
+        <div class="card medium">
+          <div class="card-image waves-effect waves-block waves-light">
+            <%= image_tag(item.image.url, class:"activator") %>
+          </div>
+          <div class="card-content">
+            <i class="tiny material-icons activator right">description</i>
+            <span class="card-title grey-text text-darken-4"><%= item.name %></span>
+            <p><%= link_to "View Item", item_path(item.id) %></p>
+          </div>
+          <div class="card-action upvote-number">
+            <span>
+              <%= link_to edit_upvote_path(item), id:"upvote" do %>
+                <i class="material-icons left">thumb_up</i>
+              <% end %>
+
+              <%= item.votes_for.size %>
+            </span>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><%= item.name %><i class="material-icons right">close</i></span>
+            <p><%= item.description %></p>
+          </div>
         </div>
       </div>
-    <% end %>
+     <% end %>
   </div>
 </div>

@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#show', as: :dashboard
   resources :users
-  resources :items, only: [:new, :create]
+  resources :items, only: [:new, :create, :show]
+  resources :favorites
 
   resources :upvotes
   get '/login', to: 'sessions#new', as: :signup

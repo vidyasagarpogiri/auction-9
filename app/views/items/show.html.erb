@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="card">
+  </div>
+  </div>
+  <div class="col s12 m7">
+    <h2 class="header"><%= @item.name %></h2>
+    <div class="card horizontal">
+      <div class="card-image">
+  <%= image_tag(@item.image.url) %>
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p><%= @item.description %></p>
+        </div>
+        <div class="card-action">
+          <span>
+              <%= link_to edit_upvote_path(@item), id:"upvote" do %>
+                <i class="material-icons left">thumb_up</i>
+              <% end %>
+              <%= @item.votes_for.size %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
