@@ -4,7 +4,7 @@
  */
 
 #home-welcome {
-  background:url('/assets/collage.jpg');
+  background: url(image-path('collage.jpg'));
   background-size: 100%;
 }
 
