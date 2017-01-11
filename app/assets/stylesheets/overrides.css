@@ -4,7 +4,7 @@
  */
 
 #home-welcome {
-  background: url(image-path('collage.jpg'));
+  background: url("collage.jpg");
   background-size: 100%;
 }
 
@@ -21,10 +21,10 @@ nav .nav-wrapper {
 
 nav .brand-logo {
   color: #616161;
-} 
+}
+
 nav ul a {
   color: #616161;
-
 }
 
 
