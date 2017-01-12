@@ -25,7 +25,7 @@
   <div class="row center">
     <%= image_tag("upvotes.png") %>
   </div>
-  <% if current_user.items.any? %>
+  <% if @upvoted.any? %>
     <div class="collection">
       <% @upvoted.each do |item| %>
         <%= link_to "#{item.name}", item_path(item.id), class:'collection-item
