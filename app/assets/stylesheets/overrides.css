@@ -79,7 +79,7 @@ h1 {
 }
 
 .card.small .card-image, .card.medium .card-image, .card.large .card-image {
-  height: 200px;
+  height: 180px;
 }
 
 .btn {
