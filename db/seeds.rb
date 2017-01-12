@@ -13,19 +13,8 @@ class Seed
                        email_address: "sally@sally.com",
                        password: "password",
                        password_confirmation: "password"
-    10.times do
-      Item.create name: Faker::Beer.name,
-                  description: Faker::Hipster.paragraph(2),
-                  user_id: user.id
-    end
 
-    10.times do
-      Item.create name: Faker::Beer.name,
-                  description: Faker::Hipster.paragraph(2),
-                  user_id: user.id
-    end
-
-    10.times do
+    9.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
                   user_id: user.id
