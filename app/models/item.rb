@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_many :favorites
+  validates_format_of :email, :with => /@/, :message => 'must be a valid email'
+  validates_presence_of :email, :contact_name, :retail_value, :delivery
 
   acts_as_votable
 

@@ -17,7 +17,17 @@ class Seed
     9.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
-                  user_id: user.id
+                  user_id: user.id,
+                  email: Faker::Internet.email,
+                  business_name: Faker::Company.name,
+                  address: Faker::Address.street_address,
+                  city: Faker::Address.city,
+                  state: Faker::Address.state,
+                  zip: Faker::Address.zip,
+                  phone: Faker::PhoneNumber.phone_number,
+                  contact_name: Faker::Name.name,
+                  retail_value: rand(0..1000),
+                  delivery: Faker::Boolean.boolean
     end
   end
 end

@@ -112,3 +112,7 @@ h4 {
 .container {
   width: 60%;
 }
+
+.card.horizontal .card-image img {
+  height: 100%;
+}
