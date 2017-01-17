@@ -1,0 +1,11 @@
+<span>
+  <div class="right">
+    <%= link_to edit_item_path(item) do %>
+      <i class="material-icons right">mode_edit</i>
+    <% end %>
+  </div>
+  <div class="right"><%= link_to item_path(item, archive: true), method: :put, id:"upvote" do %>
+    <i class="material-icons right">delete</i>
+  <% end %>
+  </div>
+</span>

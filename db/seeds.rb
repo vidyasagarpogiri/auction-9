@@ -14,10 +14,15 @@ class Seed
                        password: "password",
                        password_confirmation: "password"
 
+    user2 = User.create first_name: "jack",
+                       last_name: "black",
+                       email_address: "jack@jack.com",
+                       password: "password",
+                       password_confirmation: "password"
     9.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
-                  user_id: user.id,
+                  user_id: rand(1..2),
                   email: Faker::Internet.email,
                   business_name: Faker::Company.name,
                   address: Faker::Address.street_address,

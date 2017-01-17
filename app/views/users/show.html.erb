@@ -7,19 +7,18 @@
 </div>
 
 
-<div class="container center">
+<div class="container">
   <div class="row center">
     <%= image_tag("donations.png") %>
   </div>
-  <% if current_user.items.any? %>
-    <div class="collection">
-      <% current_user.items.each do |item| %>
-        <%= link_to "#{item.name}", item_path(item.id), class:'collection-item
-          center' %>
+  <div class="row">
+  <% if current_user.items.active.any? %>
+      <% current_user.items.active.each do |item| %>
+        <%= render partial: 'shared/item_card', locals: {item: item} %>
       <% end %>
     </div>
   <% else %>
-    <p>You haven't added any donations yet</p>
+    <p class="center">You haven't added any donations yet</p>
   <% end %>
 
   <div class="row center">
@@ -33,6 +32,6 @@
         <% end %>
     </div>
   <% else %>
-    <p>You haven't upvoted any items yet</p>
+    <p class="center">You haven't upvoted any items yet</p>
   <% end %>
 </div>

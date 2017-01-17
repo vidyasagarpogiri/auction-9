@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to dashboard_path(current_user) if current_user
   end
 
   def create
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       flash.now[:notice] = "Successfully logged in as #{@user.first_name}!"
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to dashboard_path(@user)
     else
       flash.now[:error] = 'Login failed, please try again.'
       render :new

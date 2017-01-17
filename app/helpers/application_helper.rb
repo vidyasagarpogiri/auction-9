@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def favorited?(current_user, item)
-    binding.pry
+  def back_path
+    request.referer.present? ? request.referer : browse_path
   end
 end

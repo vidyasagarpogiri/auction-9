@@ -1,31 +1,37 @@
 <div class="container">
+  <div class="row show-top">
+    <%= link_to "Go Back", back_path %>
+  </div>
   <div class="row">
     <div class="card">
-  </div>
+    </div>
   </div>
   <div class="col s12 m7">
     <h2 class="header"><%= @item.name %></h2>
     <div class="card horizontal">
       <div class="card-image">
-  <%= image_tag(@item.image.url) %>
+        <%= image_tag(@item.image.url) %>
       </div>
       <div class="card-stacked">
         <div class="card-content">
           <p><strong>Retail Value:</strong> $<%= @item.retail_value %></p>
-           <p><em><%= @item.description %></em></p>
-           <p><strong>Business Name:</strong> <%= @item.business_name %></p>
-           <p><strong>Contact:</strong> <%= @item.contact_name %></p>
-           <p><strong>Address:</strong> <%= formatted_address(@item) %></p>
-           <p><strong>Phone</strong> <%= @item.phone %></p>
-           <p><strong>Email:</strong> <%= @item.email %></p>
-           <p><strong>Delivery:</strong> <%= delivery_option(@item) %></p>
+          <p><em><%= @item.description %></em></p>
+          <p><strong>Business Name:</strong> <%= @item.business_name %></p>
+          <p><strong>Contact:</strong> <%= @item.contact_name %></p>
+          <p><strong>Address:</strong> <%= formatted_address(@item) %></p>
+          <p><strong>Phone</strong> <%= @item.phone %></p>
+          <p><strong>Email:</strong> <%= @item.email %></p>
+          <p><strong>Delivery:</strong> <%= delivery_option(@item) %></p>
         </div>
         <div class="card-action">
           <span>
-              <%= link_to edit_upvote_path(@item), id:"upvote" do %>
-                <i class="material-icons left">thumb_up</i>
-              <% end %>
-              <%= @item.votes_for.size %>
+            <%= link_to edit_upvote_path(@item), id:"upvote" do %>
+              <i class="material-icons left">thumb_up</i>
+            <% end %>
+            <%= @item.votes_for.size %>
+            <% if editable(current_user, @item) %>
+              <%= render partial: 'shared/item_card_edit', locals: {item: @item} %>
+            <% end %>
           </span>
         </div>
       </div>

@@ -1,0 +1,30 @@
+<div class="col s1 m4 l4">
+  <div class="card medium">
+    <div class="card-image waves-effect waves-block waves-light">
+      <%= image_tag(item.image.url, class:"activator") %>
+    </div>
+    <div class="card-content">
+      <i class="tiny material-icons activator right">description</i>
+      <span class="card-title grey-text text-darken-4"><%= link_to item.name,
+        item_path(item.id) %></span>
+    </div>
+    <div class="card-action upvote-number">
+      <span>
+        <%= link_to edit_upvote_path(item), id:"upvote" do %>
+          <i class="material-icons left">thumb_up</i>
+        <% end %>
+        <%= item.votes_for.size %>
+
+        <% if editable(current_user, item, params[:controller]) %>
+          <%= render partial: 'shared/item_card_edit', locals: {item: item} %>
+        <% end %>
+      </span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= item.name %><i class="material-icons right">close</i></span>
+      <p>Retail Value: <strong>$<%= item.retail_value %></strong></p>
+      <p><%= item.description %></p>
+    </div>
+  </div>
+</div>
+

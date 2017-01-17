@@ -3,6 +3,9 @@
  *= require_self
  */
 
+html {
+  color: #616161;
+}
 #home-welcome {
   background-image: url("collage.jpg");
   background-size: 100%;
@@ -27,11 +30,21 @@ nav ul a {
   color: #616161;
 }
 
-
-.collection a.collection-item {
-  color: #66bb6a;
+a {
+  color: #43a047;
 }
 
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #43a047;
+}
+
+input.select-dropdown {
+    color: #616161;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #616161;
+  }
 
 .card .card-title {
   font-size: 18px;
@@ -97,6 +110,10 @@ h4 {
   color: #424242;
 }
 
+h2 {
+  color: #5d4037;
+}
+
 .nav-italic {
   font-style: italic;
   color: #ffab40;
@@ -115,4 +132,12 @@ h4 {
 
 .card.horizontal .card-image img {
   height: 100%;
+}
+
+.show-top {
+  margin-top: 10px;
+}
+
+.btn.donation-form {
+  margin-top: 20px;
 }

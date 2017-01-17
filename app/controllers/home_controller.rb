@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   end
 
   def index
-    @items = Item.all
+    @items = Item.active
   end
 end

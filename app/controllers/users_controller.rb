@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def show
     @upvoted = current_user.get_voted Item
+    session[:last_dashboard_page] = request.env['HTTP_REFERER'] ||
+      user_path(current_user)
   end
 
   private

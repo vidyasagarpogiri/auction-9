@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#show', as: :dashboard
   resources :users
-  resources :items, only: [:new, :create, :show]
+  resources :items
   resources :favorites
 
   resources :upvotes
