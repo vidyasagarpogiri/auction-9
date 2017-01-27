@@ -21,6 +21,9 @@ class Seed
                         password: "password",
                         password_confirmation: "password",
                         role: 1
+
+    create_default_users
+
     9.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),
@@ -35,6 +38,17 @@ class Seed
                   contact_name: Faker::Name.name,
                   retail_value: rand(0..1000),
                   delivery: Faker::Boolean.boolean
+    end
+  end
+
+  def self.create_default_users
+    10.times do
+      User.create first_name: Faker::Name.name,
+                  last_name: Faker::Name.name,
+                  email_address: Faker::Internet.email,
+                  password: "password",
+                  password_confirmation: "password",
+                  role: 0
     end
   end
 end
