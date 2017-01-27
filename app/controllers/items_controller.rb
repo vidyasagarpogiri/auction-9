@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :set_item, except: [:new, :create]
+  before_action :authorize_user, except: [:new, :create, :show]
+
   def new
     @item = Item.new
   end
@@ -71,4 +74,14 @@ class ItemsController < ApplicationController
       item.update_attribute(:archived, true)
       redirect_to dashboard_path(current_user)
     end
+
+  def authorize_user
+    unless current_user.id == @item.user.id
+      redirect_to dashboard_path(current_user)
+    end
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end

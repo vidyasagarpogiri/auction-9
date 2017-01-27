@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row center">
+  </div>
+  <div class="row">
+    <% if @user.items.active.any? %>
+      <h3 class="center">Active Donations for <%= full_name(@user) %></h3>
+      <% @user.items.active.each do |item| %>
+        <%= render partial: 'shared/item_card', locals: {item: item} %>
+      <% end %>
+  </div>
+<% else %>
+  <p class="center"><%= full_name(@user) %> doesn't have any donations yet.</p>
+<% end %>
+</div>
+
+<% if @user.items.archived.any? %>
+  <div class="container">
+    <h3 class="center">Deleted Donations for <%= full_name(@user) %></h3>
+    <div class="row">
+      <% @user.items.archived.each do |item| %>
+        <%= render partial: 'shared/item_card', locals: {item: item} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

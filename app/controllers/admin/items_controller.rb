@@ -53,6 +53,10 @@ class Admin::ItemsController < ApplicationController
 
   def archive_item(item, archive)
     item.update_attribute(:archived, archive)
-    redirect_to dashboard_path(current_user)
+    if params.include?("user_dash")
+      redirect_to admin_user_path(params[:user_dash])
+    else
+      redirect_to admin_dashboard_index_path
+    end
   end
 end

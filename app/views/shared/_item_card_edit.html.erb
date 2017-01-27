@@ -1,14 +1,12 @@
 <span>
   <div class="right">
-    <% if admin? %>
-      <%= link_to edit_admin_item_path(item) do %>
-        <i class="material-icons right">mode_edit</i>
-      <% end %>
+    <% if admin? && params[:controller] != "users" %>
+      <%= render partial: "shared/admin_item_card_edit", locals: {item: item} %>
+  </div>
     <% else %>
       <%= link_to edit_item_path(item) do %>
         <i class="material-icons right">mode_edit</i>
       <% end %>
-    <% end %>
   </div>
   <% if deletable(item) %>
     <div class="right"><%= link_to item_path(item, archive: true), method: :put,
@@ -17,11 +15,5 @@
     <% end %>
     </div>
   <% end %>
-  <% if unarchivable(item) %>
-    <div class="right"><%= link_to admin_item_path(item, archive: false), method: :put,
-      data: {confirm: "Are you sure you want to unarchive this item?"}  do %>
-      <i class="material-icons right">add</i>
     <% end %>
-    </div>
-  <% end %>
 </span>

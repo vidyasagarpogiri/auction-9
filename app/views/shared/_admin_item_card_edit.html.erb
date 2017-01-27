@@ -1,0 +1,34 @@
+<%= link_to edit_admin_item_path(item) do %>
+  <i class="material-icons right">mode_edit</i>
+<% end %>
+<% if deletable(item) %>
+  <% if params[:controller] == "admin/dashboard" %>
+    <div class="right"><%= link_to admin_item_path(item, archive: true), method: :put,
+      data: {confirm: "Are you sure you want to delete this?"} do %>
+      <i class="material-icons right">delete</i>
+    <% end %>
+    </div>
+  <% else %>
+    <div class="right"><%= link_to admin_item_path(item, archive: true, user_dash:item.user.id), method: :put,
+      data: {confirm: "Are you sure you want to delete this?"} do %>
+      <i class="material-icons right">delete</i>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>
+<% if unarchivable(item) %>
+  <% if params[:controller] == "admin/dashboard" %>
+    <div class="right"><%= link_to admin_item_path(item, archive: false), method: :put,
+      data: {confirm: "Are you sure you want to unarchive this item?"}  do %>
+      <i class="material-icons right">add</i>
+    <% end %>
+    </div>
+  <% else %>
+    <div class="right"><%= link_to admin_item_path(item, archive: false,
+                                                   user_dash: item.user.id), method: :put,
+      data: {confirm: "Are you sure you want to unarchive this item?"}  do %>
+      <i class="material-icons right">add</i>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>
