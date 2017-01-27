@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
 
     @item.update(item_params)
     if @item.save
-      flash.now[:notice] = 'You successfully added an item.'
+      flash.now[:notice] = 'You successfully updated #{@item.name}.'
       redirect_to dashboard_path(current_user)
     else
       render :edit
@@ -67,7 +67,7 @@ class ItemsController < ApplicationController
                                    :phone)
     end
 
-    def archive_item
+    def archive_item(item)
       item.update_attribute(:archived, true)
       redirect_to dashboard_path(current_user)
     end

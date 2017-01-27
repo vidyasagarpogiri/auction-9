@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+  </div>
+  <div class="row center">
+    <%= link_to "Add an Auction Item for User", new_admin_item_path, class:"btn" %>
+    <%= link_to "View Users", admin_users_path, class:"btn" %>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Active Auction Items</h1>
+  <div class="row">
+    <% @active.each do |item| %>
+      <%= render partial: 'shared/item_card', locals: {item: item} %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Deleted Auction Items</h1>
+  <div class="row">
+    <% @archived.each do |item| %>
+      <%= render partial: 'shared/item_card', locals: {item: item} %>
+    <% end %>
+  </div>
+</div>

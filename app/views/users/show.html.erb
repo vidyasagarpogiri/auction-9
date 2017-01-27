@@ -12,26 +12,25 @@
     <%= image_tag("donations.png") %>
   </div>
   <div class="row">
-  <% if current_user.items.active.any? %>
+    <% if current_user.items.active.any? %>
       <% current_user.items.active.each do |item| %>
         <%= render partial: 'shared/item_card', locals: {item: item} %>
       <% end %>
-    </div>
-  <% else %>
-    <p class="center">You haven't added any donations yet</p>
-  <% end %>
-
-  <div class="row center">
-    <%= image_tag("upvotes.png") %>
   </div>
-  <% if @upvoted.any? %>
-    <div class="collection">
-      <% @upvoted.each do |item| %>
-        <%= link_to "#{item.name}", item_path(item.id), class:'collection-item
-            center' %>
-        <% end %>
-    </div>
-  <% else %>
-    <p class="center">You haven't upvoted any items yet</p>
-  <% end %>
+<% else %>
+  <p class="center">You haven't added any donations yet</p>
+<% end %>
+
+<div class="row center">
+  <%= image_tag("upvotes.png") %>
+</div>
+<% if @upvoted.any? %>
+  <div class="row">
+    <% @upvoted.each do |item| %>
+      <%= render partial: 'shared/item_card', locals: {item: item} %>
+    <% end %>
+  </div>
+<% else %>
+  <p class="center">You haven't upvoted any items yet</p>
+<% end %>
 </div>

@@ -12,13 +12,15 @@ class Seed
                        last_name: "awesome",
                        email_address: "sally@sally.com",
                        password: "password",
-                       password_confirmation: "password"
+                       password_confirmation: "password",
+                       role: 0
 
     user2 = User.create first_name: "jack",
-                       last_name: "black",
-                       email_address: "jack@jack.com",
-                       password: "password",
-                       password_confirmation: "password"
+                        last_name: "black",
+                        email_address: "jack@jack.com",
+                        password: "password",
+                        password_confirmation: "password",
+                        role: 1
     9.times do
       Item.create name: Faker::Beer.name,
                   description: Faker::Hipster.paragraph(2),

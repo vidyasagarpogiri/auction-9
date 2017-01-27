@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :items
   has_many :favorites
+  enum role: %w(default admin)
 
   acts_as_voter
 
