@@ -27,7 +27,7 @@ class Admin::ItemsController < ApplicationController
     @item.update(item_params)
     if @item.save
       flash.now[:notice] = 'You successfully updated #{@item.name}.'
-      redirect_to :back
+      redirect_to admin_dashboard_index_path
     else
       render :edit
     end
