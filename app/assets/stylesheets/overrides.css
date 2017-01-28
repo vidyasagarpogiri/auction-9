@@ -71,7 +71,7 @@ ul.dropdown-content.select-dropdown li span {
 }
 
 .success {
-  background: #66bb6a;
+  background: #1b5e20;
   color: white;
 }
 
@@ -96,6 +96,8 @@ ul.dropdown-content.select-dropdown li span {
 h1 {
   text-align: center;
   color: #1b5e20;
+  text-transform: uppercase;
+  font-size: 40px;
 }
 .card .card-content .card-title {
   line-height: 0px
@@ -115,7 +117,7 @@ h1 {
 }
 
 .btn {
-  background-color: #66bb6a;
+  background-color: #1b5e20;
 }
 
 a.btn.home {
@@ -131,6 +133,8 @@ h4 {
 
 h2 {
   color: #5d4037;
+  text-transform: uppercase;
+  font-size; 30px;
 }
 
 .nav-italic {
@@ -236,9 +240,13 @@ input:focus {
 footer.page-footer {
   margin-top: 20px;
   padding-top: 20px;
-  background-color:  #43a047;
+  background-color: #1b5e20;
 }
 
 i.material-icons.left.icon-fave {
   color: #ffab40;
+}
+
+.card-panel.dashboard-card {
+	text-align: center;
 }

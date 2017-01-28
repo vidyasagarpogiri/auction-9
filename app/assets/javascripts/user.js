@@ -7,11 +7,11 @@ $(document).ready(function() {
     valueNames: [ 'first_name', 'last_name', 'email' ]
   };
 
-  var name_options = {
-    valueNames: [ 'item-name' ]
-  };
   var userList = new List('users', options);
 
+  var itemOptions = {
+    valueNames: [ 'item_name', 'item_description', 'item_business_name' ]
+  };
 
-  var newList = new List('active-list', name_options);
+  var newList = new List('items', itemOptions);
 });

@@ -10,7 +10,7 @@
     <h2 class="header"><%= @item.name %></h2>
     <div class="card horizontal">
       <div class="card-image">
-        <%= image_tag(@item.image.url) %>
+        <%= image_tag(@item.image.url(:medium)) %>
       </div>
       <div class="card-stacked">
         <div class="card-content">

@@ -1,46 +1,37 @@
 <nav>
-	<div class="nav-wrapper">
-		<%= link_to image_tag("sprout.png"), root_path, class: "brand-logo", width:
-  "120px" %>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-		<ul id="nav-mobile" class="right hide-on-med-and-down">
+  <div class="nav-wrapper">
+    <%= link_to image_tag("sprout.png"), root_path, class: "brand-logo", width:
+      "120px" %>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
       <% if current_user %>
         <li class="nav-italic">Hi, <%= current_user.first_name.capitalize %></li>
       <% end %>
-			<li><%= link_to "Browse", browse_path %></li>
-			<% if current_user %>
-        <% if current_user.admin? %>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Admin
-          Dashboard<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><%= link_to "Browse", browse_path %></li>
+      <% if current_user %>
+        <% if admin? %>
+          <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>
         <% end %>
         <li><%= link_to "Dashboard", dashboard_path(current_user) %>
-				<li><%= link_to "Logout", logout_path %></li>
+        <li><%= link_to "Logout", logout_path %></li>
       <% else %>
-				<li><%= link_to "Login", login_path %></li>
-			<% end %>
-		</ul>
-		<ul class="side-nav right" id="mobile-demo">
+        <li><%= link_to "Login", login_path %></li>
+      <% end %>
+    </ul>
+    <ul class="side-nav right" id="mobile-demo">
       <% if current_user %>
         <li class="nav-italic">Hi, <%= current_user.first_name.capitalize %></li>
       <% end %>
-			<li><%= link_to "Browse", browse_path %></li>
-			<% if current_user %>
-        <% if current_user.admin? %>
-      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Admin
-          Dashboard<i class="material-icons right">arrow_drop_down</i></a></li>
+      <li><%= link_to "Browse", browse_path %></li>
+      <% if current_user %>
+        <% if admin? %>
+          <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %></li>
         <% end %>
         <li><%= link_to "Dashboard", dashboard_path(current_user) %>
-				<li><%= link_to "Logout", logout_path %></li>
+        <li><%= link_to "Logout", logout_path %></li>
       <% else %>
-				<li><%= link_to "Login", login_path %></li>
-			<% end %>
-		</ul>
-	</div>
+        <li><%= link_to "Login", login_path %></li>
+      <% end %>
+    </ul>
+  </div>
 </nav>
-
-<ul id="dropdown1" class="dropdown-content">
-  <%= render partial: "shared/nav_links" %>
-</ul>
-<ul id="dropdown2" class="dropdown-content">
-  <%= render partial: "shared/nav_links" %>
-</ul>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :archived, only: [:index]
     resources :items
     resources :users
+    resources :search, only: [:index]
   end
 
   get '/dashboard', to: 'users#show', as: :dashboard

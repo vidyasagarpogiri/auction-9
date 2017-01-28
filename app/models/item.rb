@@ -10,7 +10,8 @@ class Item < ApplicationRecord
   scope :archived, -> { where(archived: true) }
   scope :active, -> { where(archived: false) }
 
-  has_attached_file :image, default_url: 'default.png'
+  has_attached_file :image, default_url: 'default.png',
+                    :styles => {:medium => "600x600#"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def archive_item

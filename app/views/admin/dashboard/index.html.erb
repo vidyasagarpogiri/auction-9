@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card-panel dashboard-card">
+        <span class="white-text">
+          <%= link_to "Add Donation for User", new_admin_item_path %>
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card-panel dashboard-card">
+        <span class="white-text">
+          <%= link_to "All Users", admin_users_path, class:"center" %>
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card-panel dashboard-card">
+        <span class="white-text">
+          <%= link_to "Active Donations", admin_active_index_path %>
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card-panel dashboard-card">
+        <span class="white-text">
+          <%= link_to "Archived Donations", admin_archived_index_path %>
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m6">
+      <div class="card-panel dashboard-card">
+        <span class="white-text">
+          <%= link_to "Search Donations", admin_search_index_path %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

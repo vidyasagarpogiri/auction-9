@@ -1,6 +1,5 @@
 <div class="container">
-  <h1>Active Auction Items</h1>
-  <input class="search" placeholder="Search" />
+  <h1>Active Donations</h1>
   <div class="row">
     <% @active.each do |item| %>
       <%= render partial: 'shared/item_card', locals: {item: item} %>

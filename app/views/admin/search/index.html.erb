@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="row">
+  </div>
+  <div id="items">
+    <input class="search" placeholder="Search for a Donation" />
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>Item Name</th>
+          <th>Description</th>
+          <th>Business Name</th>
+        </tr>
+      </thead>
+
+      <tbody class="list">
+        <% @items.each do |item| %>
+          <tr>
+            <td class="item_name"><%= link_to "#{item.name}", item_path(item) %></td>
+            <td class="item_description"><%= item.description %></td>
+            <td class="item_business_name"><%=item.business_name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,7 +1,9 @@
 <% if item_liked?(item) %>
-  <i class="material-icons left icon-fave">favorite</i>
+  <%= link_to edit_upvote_path(item, upvote: false) do %>
+    <i class="material-icons left icon-fave">favorite</i>
+  <% end %>
 <% else %>
-  <%= link_to edit_upvote_path(item), id:"upvote" do %>
+  <%= link_to edit_upvote_path(item, upvote: true), id:"upvote" do %>
     <i class="material-icons left">favorite_border</i>
   <% end %>
 <% end %>
