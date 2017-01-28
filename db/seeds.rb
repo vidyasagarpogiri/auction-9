@@ -8,15 +8,15 @@
 
 class Seed
   def self.run
-    user = User.create first_name: "sally",
-                       last_name: "awesome",
-                       email_address: "sally@sally.com",
+    user = User.create first_name: "Jack",
+                       last_name: "Yeh",
+                       email_address: "jack@yeh.com",
                        password: "password",
                        password_confirmation: "password",
-                       role: 0 
-    user2 = User.create first_name: "jack",
-                        last_name: "black",
-                        email_address: "jack@jack.com",
+                       role: 0
+    user2 = User.create first_name: "admin",
+                        last_name: "admin",
+                        email_address: "admin@admin.com",
                         password: "password",
                         password_confirmation: "password",
                         role: 1
