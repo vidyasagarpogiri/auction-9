@@ -1,7 +1,7 @@
 class Admin::DashboardController < ApplicationController
   before_action :authorize_admin
   def index
-    @active = Item.all.active
-    @archived = Item.all.archived
+    @active = Item.all.active.paginate(:page => params[:page])
+    @archived = Item.all.archived.paginate(:page => params[:page])
   end
 end

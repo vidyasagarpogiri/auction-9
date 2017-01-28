@@ -1,3 +1,9 @@
+<ul id="dropdown1" class="dropdown-content">
+          <%= link_to "Add Donation for User", new_admin_item_path %>
+          <%= link_to "View Users", admin_users_path %>
+          <%= link_to "View Active Donations", admin_active_index_path %>
+          <%= link_to "View Archived Donations", admin_archived_index_path %>
+</ul>
 <nav>
 	<div class="nav-wrapper">
 		<%= link_to image_tag("sprout.png"), root_path, class: "brand-logo", width:
@@ -9,7 +15,8 @@
 			<li><%= link_to "Browse", browse_path %></li>
 			<% if current_user %>
         <% if current_user.admin? %>
-          <li><%= link_to "Admin Dashboard", admin_dashboard_index_path %>
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Admin
+          Dashboard<i class="material-icons right">arrow_drop_down</i></a></li>
         <% end %>
         <li><%= link_to "Dashboard", dashboard_path(current_user) %>
 				<li><%= link_to "Logout", logout_path %></li>

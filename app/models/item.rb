@@ -10,10 +10,12 @@ class Item < ApplicationRecord
   scope :archived, -> { where(archived: true) }
   scope :active, -> { where(archived: false) }
 
-  has_attached_file :image, default_url: 'sprout2.jpg'
+  has_attached_file :image, default_url: 'default.png'
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def archive_item
     update_attribute(:archived, true)
   end
+
+  self.per_page = 27
 end

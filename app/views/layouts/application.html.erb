@@ -13,9 +13,12 @@
   </head>
 
   <body>
-  <% unless params[:controller] == "home" && params[:action] == "show" %>
-    <%= render partial: "layouts/navbar" %>
-  <% end %>
+    <header>
+      <% unless params[:controller] == "home" && params[:action] == "show" %>
+        <%= render partial: "layouts/navbar" %>
+      <% end %>
+    </header>
+    <main>
     <% if flash[:notice] %>
       <div class="container">
         <div class="card-panel z-depth-1 success"><%= flash[:notice] %></div>
@@ -27,6 +30,11 @@
       </div>
     <% end %>
     <%= yield %>
+    </main>
+    <footer class="page-footer">
+      <%= render partial: "layouts/footer" %>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
   </body>
 </html>

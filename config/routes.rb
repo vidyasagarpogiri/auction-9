@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   root 'home#show'
 
   get '/browse', to: 'home#index', as: :browse
+  get 'search', to: 'admin/users#index'
   resources :home, only: [:index, :show]
 
   namespace :admin do
     resources :dashboard
+    resources :active, only: [:index]
+    resources :archived, only: [:index]
     resources :items
     resources :users
   end

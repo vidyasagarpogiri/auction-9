@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require list
 //= require_tree .
 $(document).ready(function() {
   $('select').material_select();

@@ -1,20 +1,27 @@
-<div class="row">
-  <div class="col m10 offset-m2" id="search-form">
-    <div class="form-group col m9" id="search-box">
-      <input class="form-control" type="search" id="search-query">
-      <label for="search-query">What interests you?</label>
-    </div>
-    <div class="col m2">
-      <input class="btn btn-default pull-right" id="button-fetch" type="button" name="submit" value="Go">
-    </div>
-  </div>
-</div>
-
-<h2>All Users</h2>
 <div class="container">
-  <div class="collection">
-    <% @users.each do |user| %>
-      <%= link_to "#{user.first_name}", admin_user_path(user), class:"collection-item" %>
-    <% end %>
+
+  <div class="row">
+  </div>
+  <div id="users">
+    <input class="search" placeholder="Search" />
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+        </tr>
+      </thead>
+
+      <tbody class="list">
+        <% @users.each do |user| %>
+          <tr>
+            <td class="first_name"><%= link_to "#{user.first_name}", admin_user_path(user) %></td>
+            <td class="last_name"><%= user.last_name %></td>
+            <td class="email"><%= user.email_address %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>

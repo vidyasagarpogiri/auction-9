@@ -3,6 +3,6 @@ class HomeController < ApplicationController
   end
 
   def index
-    @items = Item.active
+    @items = Item.active.paginate(:page => params[:page])
   end
 end

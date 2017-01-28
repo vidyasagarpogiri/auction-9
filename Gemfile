@@ -17,6 +17,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'selenium-webdriver'
 gem 'paperclip', "~> 5.0.0"
 gem 'slim-rails'
+gem 'will_paginate', '~> 3.1.0'
+gem 'listjs-rails'
 
 group :development, :test do
   gem 'pry'

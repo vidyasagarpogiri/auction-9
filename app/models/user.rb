@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   validates_presence_of :first_name,
-                        :last_name,
-                        :password,
-                        :password_confirmation
+    :last_name,
+    :password,
+    :password_confirmation
   validates :email_address, presence: true, uniqueness: true
 
   has_secure_password
@@ -11,6 +11,8 @@ class User < ApplicationRecord
   enum role: %w(default admin)
 
   acts_as_voter
+
+  self.per_page = 50
 
   before_validation do |user|
     user.strip_whitespace :email
