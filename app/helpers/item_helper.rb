@@ -11,4 +11,8 @@ module ItemHelper
   def unarchivable(item)
     admin? && item.archived
   end
+
+  def item_liked?(item)
+    current_user && (current_user.voted_for? item)
+  end
 end

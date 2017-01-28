@@ -26,6 +26,10 @@ nav {
   background: white;
 }
 
+nav a {
+  color: gray;
+}
+
 nav .nav-wrapper {
   background: white;
   margin-left: 20px;
@@ -77,10 +81,10 @@ ul.dropdown-content.select-dropdown li span {
   left: auto;
   right: auto;
 }
-.card.medium {
-  height: 400px;
-  padding: 0; margin-right: 2px;
-}
+/*.card.medium {*/
+  /*height: 400px;*/
+  /*padding: 0; margin-right: 2px;*/
+/*}*/
 
 .banner {
   font-size: 30px;
@@ -163,7 +167,7 @@ ul#dropdown1.dropdown-content {
   font-family:sans-serif;
 }
 td {
-  padding:10px; 
+  padding:10px;
   border:solid 1px #eee;
 }
 
@@ -233,4 +237,8 @@ footer.page-footer {
   margin-top: 20px;
   padding-top: 20px;
   background-color:  #43a047;
+}
+
+i.material-icons.left.icon-fave {
+  color: #ffab40;
 }

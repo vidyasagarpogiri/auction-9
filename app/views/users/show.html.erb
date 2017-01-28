@@ -22,7 +22,7 @@
 <% end %>
 
 <div class="row center">
-  <%= image_tag("upvotes.png") %>
+  <%= image_tag("fave.png") %>
 </div>
 <% if @upvoted.any? %>
   <div class="row">
@@ -31,6 +31,6 @@
     <% end %>
   </div>
 <% else %>
-  <p class="center">You haven't upvoted any items yet</p>
+  <p class="center">You don't have any favorites yet.</p>
 <% end %>
 </div>

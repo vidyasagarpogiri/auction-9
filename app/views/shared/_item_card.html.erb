@@ -1,5 +1,5 @@
-<div class="col s1 m4 l4">
-  <div class="card small">
+<div class="col s12 m4 l4">
+  <div class="card small s12">
     <div class="card-image waves-effect waves-block waves-light">
       <%= image_tag(item.image.url, class:"activator") %>
     </div>
@@ -10,11 +10,7 @@
     </div>
     <div class="card-action upvote-number">
       <span>
-        <%= link_to edit_upvote_path(item), id:"upvote" do %>
-          <i class="material-icons left">thumb_up</i>
-        <% end %>
-        <%= item.votes_for.size %>
-
+        <%= render partial: 'shared/upvote', locals: {item: item} %>
         <% if editable(current_user, item, params[:controller]) %>
           <%= render partial: 'shared/item_card_edit', locals: {item: item} %>
         <% end %>
