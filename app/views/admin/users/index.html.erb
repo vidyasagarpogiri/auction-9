@@ -8,7 +8,6 @@
       <thead>
         <tr>
           <th>First Name</th>
-          <th>Last Name</th>
           <th>Email Address</th>
         </tr>
       </thead>
@@ -16,8 +15,7 @@
       <tbody class="list">
         <% @users.each do |user| %>
           <tr>
-            <td class="first_name"><%= link_to "#{user.first_name}", admin_user_path(user) %></td>
-            <td class="last_name"><%= user.last_name %></td>
+            <td class="name"><%= link_to "#{user.first_name} #{user.last_name}", admin_user_path(user) %></td>
             <td class="email"><%= user.email_address %></td>
           </tr>
         <% end %>

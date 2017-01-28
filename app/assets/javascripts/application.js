@@ -16,5 +16,17 @@
 //= require_tree .
 $(document).ready(function() {
   $('select').material_select();
-   $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
+
+   var options = {
+    valueNames: [ 'name', 'email' ]
+  };
+
+  var userList = new List('users', options);
+
+  var itemOptions = {
+    valueNames: [ 'item_name', 'item_description', 'item_business_name' ]
+  };
+
+  var newList = new List('items', itemOptions);
 });
