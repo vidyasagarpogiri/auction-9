@@ -7,7 +7,7 @@ class Item < ApplicationRecord
 
   acts_as_votable
 
-  default_scope  {order(created_at: :desc)}
+  default_scope  {order(created_at: :asc)}
 
   scope :archived, -> { where(archived: true) }
   scope :active, -> { where(archived: false) }
