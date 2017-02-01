@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
       flash.now[:notice] = 'You successfully added an item.'
       redirect_to dashboard_path(current_user)
     else
+      flash.now[:error] = @item.errors.full_messages.join(", ")
       render :new
     end
   end
