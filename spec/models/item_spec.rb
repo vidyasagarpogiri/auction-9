@@ -12,7 +12,17 @@ RSpec.describe Item, type: :model do
 
     item = Item.create name: Faker::Hipster.sentence(2),
       description: Faker::Hipster.paragraph(2),
-      user_id: user.id
+      user_id: user.id,
+      business_name: "A Business",
+      contact_name: "Contact Name",
+      address: "123 Sesame St",
+      city: "Denver",
+      state: "CO",
+      zip: "80202",
+      phone: "1234561111",
+      email: "hello@example.com",
+      retail_value: 100,
+      delivery: true
 
     expect(item.votes_for.size).to eq(0)
 

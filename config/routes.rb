@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :search, only: [:index]
   end
 
-  get '/dashboard', to: 'users#show', as: :dashboard
+  get '/dashboard/:id', to: 'users#show', as: :dashboard
   resources :users
   resources :items
   resources :upvotes

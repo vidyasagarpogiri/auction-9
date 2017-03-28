@@ -1,15 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe "Unauthenticated User", :feature do
-  it "can browse auction items on home page" do
+  before(:each) do
     create_items
+  end
 
+  it "can browse auction items on home page" do
     visit '/'
 
     click_on "Browse Auction Items"
 
     expect(page).to have_content(Item.first.name)
     expect(page).to have_content(Item.last.name)
+  end
+
+  it "can view item on show page" do
+    visit browse_path
+
+    click_on Item.first.name
+
+    expect(current_path).to eq("/items/#{Item.first.id}")
   end
 
   def create_items
@@ -22,7 +32,17 @@ RSpec.describe "Unauthenticated User", :feature do
     10.times do
       Item.create name: Faker::Hipster.sentence(2),
                   description: Faker::Hipster.paragraph(2),
-                  user_id: user.id
+                  user_id: user.id,
+                  email: Faker::Internet.email,
+                  business_name: Faker::Company.name,
+                  address: Faker::Address.street_address,
+                  city: Faker::Address.city,
+                  state: Faker::Address.state,
+                  zip: Faker::Address.zip,
+                  phone: Faker::PhoneNumber.phone_number,
+                  contact_name: Faker::Name.name,
+                  retail_value: rand(0..1000),
+                  delivery: Faker::Boolean.boolean
     end
   end
 end

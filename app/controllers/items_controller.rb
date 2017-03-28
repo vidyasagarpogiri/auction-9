@@ -10,8 +10,8 @@ class ItemsController < ApplicationController
     @item = current_user.items.create(item_params)
 
     if @item.save
-      flash.now[:notice] = 'You successfully added an item.'
       redirect_to dashboard_path(current_user)
+      flash[:notice] = 'You successfully added an item.'
     else
       flash.now[:error] = @item.errors.full_messages.join(", ")
       render :new
@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
 
     @item.update(item_params)
     if @item.save
-      flash.now[:notice] = 'You successfully updated #{@item.name}.'
       redirect_to dashboard_path(current_user)
+      flash[:notice] = 'You successfully updated #{@item.name}.'
     else
       render :edit
     end

@@ -11,19 +11,20 @@ RSpec.describe "Authenticated User", :feature do
 
   it "can login" do
     visit "/"
-    click_on "Donate items to the auction"
+    click_on "Donate Items to the Auction"
     fill_in "Email address", with: "sally@sally.com"
     fill_in "Password", with: "password"
     within "#login-form" do
       click_on "Login"
     end
 
-    expect(page).to have_content("Welcome, sally")
+    expect(page).to have_content("Hi, Sally")
+    expect(page).to have_content("You haven't added any donations yet")
   end
 
   it "can logout" do
     visit "/"
-    click_on "Sign up or Login"
+    click_on "Donate Items to the Auction"
     fill_in "Email address", with: "sally@sally.com"
     fill_in "Password", with: "password"
     within "#login-form" do
@@ -32,8 +33,9 @@ RSpec.describe "Authenticated User", :feature do
 
     expect(page).to have_content("Logout")
 
-    click_on "Logout"
-    expect(page).to have_content("You have successfully logged out")
-
+    within "#nav-mobile" do
+      click_on "Logout"
+    end
+    expect(current_path).to eq(root_path)
   end
 end
